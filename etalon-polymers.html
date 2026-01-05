@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETALON POLYMERS - Medical Packaging</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles (Animations) -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out forwards;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbar for cleaner look in some elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm py-2">
+        <div class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+            <!-- Logo Area -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="scrollToSection('home')">
+                <div class="h-10 md:h-12 w-auto overflow-hidden">
+                    <img src="logo.png" alt="Etalon Polymers Logo" class="h-full object-contain" />
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-xl font-bold text-green-700 tracking-tight">ETALON POLYMERS</h1>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest">Medical Packaging</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6" id="desktop-nav">
+                <!-- Nav items will be injected by JS -->
+            </nav>
+
+            <!-- Right Area: Contact Btn + Lang + Menu -->
+            <div class="flex items-center gap-3">
+                <button 
+                    onclick="scrollToSection('contact')"
+                    class="hidden md:flex bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors items-center gap-2 shadow-md hover:shadow-lg"
+                >
+                    <i data-lucide="phone" class="w-3 h-3"></i>
+                    <span id="header-contact-btn-text">Зв'язатися з нами</span>
+                </button>
+
+                <div class="flex items-center bg-slate-100 rounded-lg p-1" id="lang-switcher">
+                    <!-- Lang buttons will be injected by JS -->
+                </div>
+                
+                <button class="lg:hidden p-2 text-slate-600" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 shadow-lg absolute w-full">
+            <nav class="flex flex-col gap-4" id="mobile-nav-items">
+                <!-- Mobile Nav items injected by JS -->
+            </nav>
+            <button 
+                onclick="scrollToSection('contact')"
+                class="w-full mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2"
+            >
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                <span id="mobile-contact-btn-text">Зв'язатися з нами</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+        
+        <!-- HERO SECTION -->
+        <section id="home" class="relative h-[600px] flex items-center justify-center overflow-hidden bg-slate-900">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="IMG_8274 копія.jpg" alt="Factory Building" class="w-full h-full object-cover opacity-60" />
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-800/60"></div>
+            </div>
+            
+            <div class="relative z-10 container mx-auto px-4 text-center text-white">
+                <div class="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/30 rounded-full px-4 py-1 mb-6 backdrop-blur-sm animate-fade-in-up">
+                    <i data-lucide="check-circle" class="text-green-400 w-4 h-4"></i>
+                    <span class="text-sm font-medium text-green-100">ISO 9001 Compliant Production</span>
+                </div>
+                <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight max-w-4xl mx-auto drop-shadow-lg">
+                    <!-- Title injected -->
+                </h1>
+                <p id="hero-subtitle" class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto drop-shadow-md">
+                    <!-- Subtitle injected -->
+                </p>
+                <button 
+                    onclick="scrollToSection('catalog')"
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg shadow-green-900/50 transition-all transform hover:-translate-y-1 flex items-center gap-2 mx-auto active:scale-95"
+                >
+                    <span id="hero-cta"></span>
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION 1: POLYMERS -->
+        <section class="py-12 bg-slate-100 border-b border-slate-200">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm max-w-4xl mx-auto aspect-video border border-slate-200">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        poster="IMG_8044.jpg"
+                        class="w-full h-full object-cover"
+                    >
+                        <!-- Замініть шляхи нижче на реальні файли відео у вашій папці -->
+                        <source src="video/polymers.mp4" type="video/mp4">
+                        <source src="video/polymers.webm" type="video/webm">
+                        Ваш браузер не підтримує відео.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 bg-slate-50 border-t border-slate-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-stretch gap-12">
+                    <div class="lg:w-1/2 flex flex-col gap-6">
+                        <!-- Photo 1: Factory -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white group w-full h-64 lg:h-auto lg:flex-1">
+                            <img src="IMG_8274 копія.jpg" alt="Factory" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onclick="openModal('IMG_8274 копія.jpg')" />
+                            <div class="absolute bottom-0 left-0 bg-green-700 text-white px-4 py-2 rounded-tr-xl font-bold text-sm z-10">
+                                Завод ETALON POLYMERS
+                            </div>
+                        </div>
+                        <!-- Photo 2: Products in Bags -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white group w-full h-64 lg:h-auto lg:flex-1">
+                            <img src="IMG_8045.jpg" alt="Products in bags" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onclick="openModal('IMG_8045.jpg')" />
+                            <div class="absolute bottom-0 left-0 bg-slate-800 text-white px-4 py-2 rounded-tr-xl font-bold text-sm z-10">
+                                Готова продукція
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <h2 id="about-title" class="text-3xl font-bold text-slate-800 mb-6 border-l-4 border-green-500 pl-4">
+                            <!-- About Title -->
+                        </h2>
+                        <div class="space-y-4 text-slate-600 leading-relaxed text-lg mb-8">
+                            <p id="about-text1"></p>
+                            <p id="about-text2" class="text-slate-800 font-medium"></p>
+                            <p id="about-text3"></p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <i data-lucide="info" class="text-green-600 w-5 h-5"></i>
+                                <span id="about-legal-title"></span>
+                            </h3>
+                            <div id="about-details-grid" class="grid gap-y-3">
+                                <!-- Legal details injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES SECTION -->
+        <section id="advantages" class="py-16 bg-white border-b border-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 id="adv-title" class="text-3xl font-bold text-center text-slate-900 mb-12"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="adv-grid">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CATALOG SECTION -->
+        <section id="catalog" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-green-600 font-bold tracking-wider uppercase text-sm mb-2 block">Medical Containers</span>
+                    <h2 id="catalog-title" class="text-4xl font-bold text-slate-900 mb-4"></h2>
+                    <p id="catalog-subtitle" class="text-slate-500 max-w-2xl mx-auto"></p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex justify-center flex-wrap gap-2 mb-12" id="catalog-filters">
+                    <!-- Filters injected by JS -->
+                </div>
+
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                    <!-- Products injected by JS -->
+                </div>
+
+                <!-- Video Section 2: Container -->
+                <div class="mt-20">
+                     <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto aspect-[21/9] flex items-center justify-center relative group cursor-pointer">
+                        <div class="absolute inset-0 bg-green-900/20 group-hover:bg-green-900/10 transition-colors z-10"></div>
+                        <div class="text-center z-20">
+                            <video autoplay muted loop playsinline preload="metadata" poster="second-preview.png" class="w-full h-full object-cover" > <!-- Замініть шляхи нижче на реальні файли відео у вашій папці --> <source src="video/video-2.mp4" type="video/mp4"> <source src="video/video-2.webm" type="video/webm"> Ваш браузер не підтримує відео. </video>
+                            <h3 class="text-xl font-bold text-white" id="video2-title">Відео-огляд контейнера</h3>
+                        </div>
+                         <!-- Placeholder for video thumb -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="py-20 bg-slate-900 text-white">
+            <div class="container mx-auto px-4">
+                <h2 id="certs-title" class="text-3xl font-bold mb-16 text-center"></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" id="certificates-grid">
+                    <!-- Certificates injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNERS SECTION -->
+        <section id="partners" class="py-16 bg-white border-b border-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold text-center text-slate-800 mb-12" id="partners-title">Наші партнери</h2>
+                
+                <div class="flex flex-wrap justify-center items-start gap-12 md:gap-16">
+                    <!-- Partner 1 -->
+                    <div class="flex flex-col items-center gap-4 group w-56 text-center">
+                         <div class="w-32 h-32 bg-white border border-slate-200 rounded-full flex items-center justify-center p-4 shadow-sm group-hover:shadow-md group-hover:border-green-200 transition-all duration-300 overflow-hidden relative">
+                             <!-- Замініть src на реальний шлях до логотипу -->
+                             <img src="etalon-polymers/partners/vitaminy.png" alt="Логотип АТ ВІТАМІНИ" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.parentElement.innerHTML='<i data-lucide=\'building-2\' class=\'w-12 h-12 text-slate-300 group-hover:text-green-500 transition-colors\'></i>'">
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-slate-800 leading-tight mb-1">АТ "ВІТАМІНИ"</h4>
+                             <p class="text-xs text-slate-500 font-mono">(Код ЄДРПОУ 00480968)</p>
+                         </div>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="flex flex-col items-center gap-4 group w-56 text-center">
+                         <div class="w-32 h-32 bg-white border border-slate-200 rounded-full flex items-center justify-center p-4 shadow-sm group-hover:shadow-md group-hover:border-green-200 transition-all duration-300 overflow-hidden relative">
+                             <img src="etalon-polymers/partners/apteka_gaevskogo.png" alt="Логотип АПТЕКА ГАЄВСЬКОГО" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.parentElement.innerHTML='<i data-lucide=\'cross\' class=\'w-12 h-12 text-slate-300 group-hover:text-green-500 transition-colors\'></i>'">
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-slate-800 leading-tight mb-1">ТОВ "АПТЕКА ГАЄВСЬКОГО"</h4>
+                             <p class="text-xs text-slate-500 font-mono">(Код ЄДРПОУ 21032062)</p>
+                         </div>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="flex flex-col items-center gap-4 group w-56 text-center">
+                         <div class="w-32 h-32 bg-white border border-slate-200 rounded-full flex items-center justify-center p-4 shadow-sm group-hover:shadow-md group-hover:border-green-200 transition-all duration-300 overflow-hidden relative">
+                             <img src="etalon-polymers/partners/technolog.png" alt="Логотип ПрАТ ТЕХНОЛОГ" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.parentElement.innerHTML='<i data-lucide=\'flask-conical\' class=\'w-12 h-12 text-slate-300 group-hover:text-green-500 transition-colors\'></i>'">
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-slate-800 leading-tight mb-1">ПрАТ "ТЕХНОЛОГ"</h4>
+                             <p class="text-xs text-slate-500 font-mono">(Код ЄДРПОУ 14181442)</p>
+                         </div>
+                    </div>
+
+                    <!-- Partner 4 -->
+                    <div class="flex flex-col items-center gap-4 group w-56 text-center">
+                         <div class="w-32 h-32 bg-white border border-slate-200 rounded-full flex items-center justify-center p-4 shadow-sm group-hover:shadow-md group-hover:border-green-200 transition-all duration-300 overflow-hidden relative">
+                             <img src="etalon-polymers/partners/istok_plus.png" alt="Логотип ТОВ Істок+" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.parentElement.innerHTML='<i data-lucide=\'zap\' class=\'w-12 h-12 text-slate-300 group-hover:text-green-500 transition-colors\'></i>'">
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-slate-800 leading-tight mb-1">ТОВ “Істок+”</h4>
+                             <p class="text-xs text-slate-500 font-mono">(Код ЄДРПОУ 14181442)</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DELIVERY & PAYMENT SECTION -->
+        <section id="delivery" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 id="delivery-title" class="text-3xl font-bold text-slate-800 mb-4"></h2>
+                    <p id="delivery-intro" class="text-slate-600 max-w-3xl mx-auto text-lg"></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Delivery Column -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <i data-lucide="truck" class="w-6 h-6"></i>
+                            </div>
+                            <h3 id="del-title" class="text-xl font-bold text-slate-800"></h3>
+                        </div>
+                        <div id="del-list" class="space-y-4 text-slate-600">
+                            <!-- Injected -->
+                        </div>
+                    </div>
+
+                    <!-- Payment Column -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <i data-lucide="credit-card" class="w-6 h-6"></i>
+                            </div>
+                            <h3 id="pay-title" class="text-xl font-bold text-slate-800"></h3>
+                        </div>
+                        <div id="pay-list" class="space-y-4 text-slate-600">
+                            <!-- Injected -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-green-50 p-6 rounded-xl border border-green-100 text-center text-slate-700">
+                    <p id="delivery-footer" class="leading-relaxed"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-white relative border-t border-slate-100">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+                    <!-- Info Side -->
+                    <div class="bg-green-700 p-10 lg:w-1/3 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 id="contact-title" class="text-2xl font-bold mb-6"></h3>
+                            <p class="text-green-100 mb-8">Ми відкриті до співпраці з виробниками медичних препаратів та фармацевтичними компаніями.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="map-pin" class="text-green-300 mt-1 flex-shrink-0 w-5 h-5"></i>
+                                    <div>
+                                        <p id="contact-addr-lbl" class="font-semibold text-white"></p>
+                                        <p id="contact-addr-val" class="text-green-100 text-sm"></p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="phone" class="text-green-300 mt-1 flex-shrink-0 w-5 h-5"></i>
+                                    <div>
+                                        <p id="contact-sales-lbl" class="font-semibold text-white"></p>
+                                        <div id="contact-phones">
+                                            <!-- Phones injected -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="mail" class="text-green-300 mt-1 flex-shrink-0 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-white">Email:</p>
+                                        <p class="text-green-100 text-sm">info@etalon-polymers.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12 pt-8 border-t border-green-600">
+                            <p class="text-sm text-green-200">© 1992-2025 ETALON POLYMERS</p>
+                        </div>
+                    </div>
+
+                    <!-- Form Side -->
+                    <div class="p-10 lg:w-2/3 bg-white relative">
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="form-success" class="hidden h-full flex-col items-center justify-center text-center animate-fade-in py-10">
+                            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="check-circle" class="w-12 h-12"></i>
+                            </div>
+                            <h3 id="success-title" class="text-2xl font-bold text-slate-800 mb-2"></h3>
+                            <p id="success-msg" class="text-slate-500 max-w-md"></p>
+                            <button onclick="resetForm()" class="mt-8 text-sm text-green-600 font-bold hover:underline">
+                                Відправити ще одне повідомлення
+                            </button>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <!-- Google Map -->
+                            <div class="w-full h-64 bg-slate-100 rounded-xl mb-8 overflow-hidden border border-slate-200 shadow-inner group relative">
+                                <iframe 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    loading="lazy" 
+                                    allowfullscreen 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://maps.google.com/maps?q=48.7310029,30.2037633&hl=uk&z=17&output=embed"
+                                    title="Розташування заводу ETALON POLYMERS"
+                                >
+                                </iframe>
+                                <a href="https://www.google.com/maps?q=48.7310029,30.2037633" target="_blank" class="absolute bottom-2 right-2 bg-white text-xs font-bold text-slate-700 px-3 py-1 rounded shadow hover:bg-slate-50 transition-colors flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> Відкрити в Google Maps
+                                </a>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label id="lbl-name" class="block text-sm font-medium text-slate-700 mb-2"></label>
+                                    <input required type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all" placeholder="Іван Петренко" />
+                                </div>
+                                <div>
+                                    <label id="lbl-phone" class="block text-sm font-medium text-slate-700 mb-2"></label>
+                                    <input required type="tel" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all" placeholder="+38 (099) 000-00-00" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                                <input required type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all" placeholder="email@company.com" />
+                            </div>
+                            <div>
+                                <label id="lbl-msg" class="block text-sm font-medium text-slate-700 mb-2"></label>
+                                <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all" placeholder="Яку продукцію ви шукаєте?"></textarea>
+                            </div>
+                            <button 
+                                id="btn-submit"
+                                type="submit"
+                                class="bg-slate-900 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition-colors w-full md:w-auto flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                <!-- Button Text Injected -->
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="bg-white p-1 rounded h-10 w-10 flex items-center justify-center">
+                    <img src="logo.png" alt="Logo" class="max-h-full max-w-full" />
+                </div>
+                <span class="text-white font-bold text-lg">ETALON POLYMERS</span>
+            </div>
+            <div class="text-sm">
+                <p>Виробництво полімерної тари для фармацевтики.</p>
+            </div>
+            <div class="flex gap-4" id="footer-lang-links">
+                <!-- Links injected -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button 
+        onclick="scrollToTop()"
+        id="scroll-top-btn"
+        class="fixed bottom-8 right-8 bg-green-600 text-white p-3 rounded-full shadow-lg z-40 transition-all duration-300 transform hover:bg-green-700 hover:scale-110 translate-y-20 opacity-0"
+        aria-label="Scroll to top"
+    >
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- IMAGE MODAL -->
+    <div 
+        id="image-modal"
+        class="hidden fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+        onclick="closeModal()"
+    >
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2" onclick="closeModal()">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] relative" onclick="event.stopPropagation()">
+            <img 
+                id="modal-img-element"
+                src="" 
+                alt="Full size view" 
+                class="max-w-full max-h-[85vh] object-contain rounded-md shadow-2xl"
+            />
+            <div class="text-center mt-4">
+                <span class="text-white/80 text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
+                    Натисніть будь-де, щоб закрити
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- DATA ---
+        
+        // Шляхи до фотографій налаштовані для локального використання.
+        // Переконайтеся, що папка 'etalon-polymers' знаходиться в тій самій директорії, що і цей HTML файл.
+        
+        const products = [
+            { id: 'k7', title: 'Контейнер K-07', volume: '7 мл', ml: 7, image: 'etalon-polymers/catalog/k-7.webp' },
+            { id: 'k12', title: 'Контейнер K-12', volume: '12 мл', ml: 12, image: 'etalon-polymers/catalog/k-12.webp' },
+            { id: 'k15', title: 'Контейнер K-15', volume: '15 мл', ml: 15, image: 'etalon-polymers/catalog/k-15.webp' },
+            { id: 'k20', title: 'Контейнер K-20', volume: '20 мл', ml: 20, image: 'etalon-polymers/catalog/k-20.webp' },
+            { id: 'k35', title: 'Контейнер K-35', volume: '35 мл', ml: 35, image: 'etalon-polymers/catalog/k-35.webp' },
+            { id: 'k50', title: 'Контейнер K-50', volume: '50 мл', ml: 50, image: 'etalon-polymers/catalog/k-50.webp' },
+            { id: 'k60', title: 'Контейнер K-60', volume: '60 мл', ml: 60, image: 'etalon-polymers/catalog/k-60.webp' },
+            { id: 'k70', title: 'Контейнер K-70', volume: '70 мл', ml: 70, image: 'etalon-polymers/catalog/k-70.webp' },
+            { id: 'k75', title: 'Контейнер K-75', volume: '75 мл', ml: 75, image: 'etalon-polymers/catalog/k-75.webp' },
+            { id: 'k100', title: 'Контейнер K-100', volume: '100 мл', ml: 100, image: 'etalon-polymers/catalog/k-100.webp' },
+            { id: 'k120', title: 'Контейнер K-120', volume: '120 мл', ml: 120, image: 'etalon-polymers/catalog/k-120.webp' },
+            { id: 'k125', title: 'Контейнер K-125', volume: '125 мл', ml: 125, image: 'etalon-polymers/catalog/k-125.webp' },
+            { id: 'k150', title: 'Контейнер K-150', volume: '150 мл', ml: 150, image: 'etalon-polymers/catalog/k-150.webp' },
+            { id: 'k155', title: 'Контейнер K-155', volume: '155 мл', ml: 155, image: 'etalon-polymers/catalog/k-155.webp' },
+            { id: 'k190', title: 'Контейнер K-190', volume: '190 мл', ml: 190, image: 'etalon-polymers/catalog/k-190.webp' },
+            { id: 'k200', title: 'Контейнер K-200', volume: '200 мл', ml: 200, image: 'etalon-polymers/catalog/k-200.webp' },
+            { id: 'k250', title: 'Контейнер K-250', volume: '250 мл', ml: 250, image: 'etalon-polymers/catalog/k-250.webp' }
+        ];
+
+        const documents = [
+            { icon: 'scroll-text', title: 'Свідоцтво про державну реєстрацію юридичної особи', file: 'etalon-polymers/documents/registration.jpg' },
+            { icon: 'shield-check', title: 'Технічні умови ТУ У 22.2-14214408-001:2012', file: 'etalon-polymers/documents/tu.jpg' },
+            { icon: 'file-heart', title: 'Свідоцтво про державну реєстрацію на медичний виріб', file: 'etalon-polymers/documents/med_registration.jpg' },
+            { icon: 'file-chart-line', title: 'Комерційна пропозиція на контейнери', file: 'etalon-polymers/documents/commercial_offer.jpg' },
+            { icon: 'award', title: 'Сертифікат на систему управління якістю ISO', file: 'etalon-polymers/documents/iso.jpg' },
+            { icon: 'landmark', title: 'Свідоцтво платника ПДВ', file: 'etalon-polymers/documents/vat.jpg' }
+        ];
+
+        // Icons for advantages section
+        const advIcons = ['award', 'banknote', 'package-search', 'palette'];
+
+        const translations = {
+            UA: {
+                nav: { home: 'Головна', about: 'Про нас', catalog: 'Каталог', certs: 'Документи', delivery: 'Доставка', contacts: 'Контакти' },
+                btn_contact: "Зв'язатися з нами",
+                partners_title: 'Наші партнери',
+                certs_title: 'Документи / Технічні умови / Сертифікати',
+                filter: { all: 'Всі', small: 'Малі (<50 мл)', medium: 'Середні (50-150 мл)', large: 'Великі (>150 мл)' },
+                hero: {
+                    title: 'Полімерні медичні контейнери від виробника',
+                    subtitle: 'Надійне пакування для фармацевтики з 2006 року',
+                    cta: 'Переглянути каталог'
+                },
+                about: {
+                    title: 'Про компанію ETALON POLYMERS',
+                    text1: 'Підприємство ETALON POLYMERS має власну лінію по виробництву медичної тари. Продукція призначена для пакування сипких медичних препаратів (вітаміни, пігулки, капсули, БАДи) та мазей. Виробляється згідно з ТУ У 22.2-14214408-001:2012. Кришки забезпечують повну герметичність.',
+                    text2: 'Завод ПАТ «ЕТАЛОН» - це підприємство приватної власності у вигляді публічного акціонерного товариства з сформованим статутним фондом у розмірі 501,2 тис грн та балансовою вартістю основних виробничих фондів 16,4 млн грн станом на 31.12.2025.',
+                    text3: 'Завод розташований у промисловій зоні міста Умань, Черкаської області, вул.Старицького ,5 зі зручним автомобільним заїздом з боку автобану Київ-Одеса(3,7 км) і траси Кіровоград-Вінниця (0,7 км). Загальна площа приміщень 4,5 тисячі м2, що знаходиться на земельній ділянці промислового призначення площею 1,5 га.',
+                    legal_title: 'Юридична інформація',
+                    details: [
+                        { label: 'Повна назва', value: 'ПУБЛІЧНЕ АКЦІОНЕРНЕ ТОВАРИСТВО «ЕТАЛОН»' },
+                        { label: 'Назва англійською', value: 'PUBLIC JOINT STOCK COMPANY “ETALON”' },
+                        { label: 'Код ЄДРПОУ', value: '14214408' },
+                        { label: 'Платник ПДВ', value: '№ 142144023058 (станом на 08.12.2025)' },
+                        { label: 'Директор', value: 'Мітасов Максим Вікторович' },
+                        { label: 'Адреса', value: '20300, Україна, Черкаська обл., м. Умань, вул. Старицького, 5' },
+                        { label: 'Дата заснування', value: '24.12.1992' },
+                        { label: 'Статутний капітал', value: '501 160 ₴' },
+                        { label: 'КВЕД', value: '22.29 Виробництво інших виробів із пластмас' }
+                    ]
+                },
+                advantages: {
+                    title: "Наші Переваги",
+                    items: [
+                        { title: "Висока Якість", text: "Продукція сертифікована, відповідає стандартам ISO та виготовляється з медичної сировини." },
+                        { title: "Ціна Виробника", text: "Ми є прямим виробником, що гарантує найкращі ціни на ринку без націнок посередників." },
+                        { title: "Широкий Асортимент", text: "Великий вибір контейнерів від 7 мл до 250 мл для будь-яких фармацевтичних потреб." },
+                        { title: "Індивідуальний Підхід", text: "Можливість виготовлення продукції будь-якого кольору за бажанням замовника." }
+                    ]
+                },
+                catalog: {
+                    title: 'Каталог продукції',
+                    subtitle: 'Мінімальне замовлення від 10 000 одиниць',
+                    pricePrefix: 'Об\'єм:',
+                    currency: '',
+                    details: 'Детальніше'
+                },
+                delivery: {
+                    title: "Доставка та Оплата",
+                    intro: "Ми забезпечуємо надійну та оперативну доставку нашої продукції по всій території України та країн Європи.",
+                    del_title: "Доставка",
+                    del_items: [
+                        "<strong>По Україні</strong>: здійснюється через перевірених перевізників («Нова Пошта», «Укрпошта», «SAT», доставка до складу або кур’єром за вашою адресою). Терміни доставки — 1–3 робочі дні залежно від регіону.",
+                        "<strong>По Європі</strong>: відправляємо в усі країни ЄС через міжнародних логістичних партнерів (DHL, FedEx, UPS або автомобільним транспортом). Терміни доставки — від 3 до 10 робочих днів залежно від країни та обраного способу.",
+                        "Вартість доставки розраховується індивідуально залежно від обсягу замовлення, ваги та пункту призначення."
+                    ],
+                    pay_title: "Оплата",
+                    pay_items: [
+                        "Приймаємо оплату в декількох валютах для вашої зручності: <strong>гривня (UAH)</strong>, <strong>долар США (USD)</strong>, <strong>євро (EUR)</strong>, <strong>польський злотий (PLN)</strong>.",
+                        "Усі платежі здійснюються з урахуванням ПДВ (ми є платниками ПДВ, свідоцтво № 142144023058).",
+                        {
+                            text: "Можливі форми оплати:",
+                            subitems: [
+                                "Безготівковий банківський переказ (для юридичних осіб — з повним пакетом бухгалтерських документів).",
+                                "Оплата на розрахунковий рахунок за виставленим рахунком-фактурою.",
+                                "Для іноземних партнерів — SWIFT-переказ."
+                            ]
+                        }
+                    ],
+                    footer: "Мінімальне замовлення — від 10 000 одиниць. Для постійних клієнтів та великих обсягів діють гнучкі умови оплати (відтермінування, часткова передоплата).<br><br>Якщо у вас є особливі побажання щодо доставки чи оплати — зв’яжіться з нашим відділом збуту, і ми підберемо оптимальний варіант саме для вас."
+                },
+                contact: {
+                    title: 'Зв\'яжіться з нами',
+                    form_name: 'Ваше ім\'я',
+                    form_phone: 'Телефон',
+                    form_msg: 'Повідомлення',
+                    btn_send: 'Відправити запит',
+                    btn_sending: 'Відправка...',
+                    success_title: 'Дякуємо!',
+                    success_msg: 'Ваш запит успішно відправлено. Менеджер зв\'яжеться з вами найближчим часом.',
+                    sales_dep: 'Відділ збуту',
+                    phones: ['+38 (096) 244-18-14', '+38 (063) 307-44-71'],
+                    address_val: 'Україна, Черкаська обл., м. Умань, вул. Старицького, 5',
+                    address_lbl: 'Адреса виробництва:'
+                }
+            },
+            EN: {
+                nav: { home: 'Home', about: 'About Us', catalog: 'Catalog', certs: 'Documents', delivery: 'Delivery', contacts: 'Contacts' },
+                btn_contact: "Contact Us",
+                partners_title: 'Our Partners',
+                certs_title: 'Documents / Technical Specifications / Certificates',
+                filter: { all: 'All', small: 'Small (<50 ml)', medium: 'Medium (50-150 ml)', large: 'Large (>150 ml)' },
+                hero: {
+                    title: 'Polymer Medical Containers from Manufacturer',
+                    subtitle: 'Reliable pharmaceutical packaging since 2006',
+                    cta: 'View Catalog'
+                },
+                about: {
+                    title: 'About ETALON POLYMERS',
+                    text1: 'ETALON POLYMERS has its own production line for medical packaging. The products are designed for packaging loose medical preparations (vitamins, pills, capsules, dietary supplements) and ointments. Manufactured according to TU U 22.2-14214408-001:2012.',
+                    text2: 'PJSC "ETALON" Plant is a private property enterprise in the form of a public joint-stock company with a formed statutory fund of 501.2 thousand UAH and a book value of fixed assets of 16.4 million UAH as of 31.12.2025.',
+                    text3: 'The plant is located in the industrial zone of Uman, Cherkasy region, Starytskoho str., 5 with convenient car access from the Kyiv-Odesa highway (3.7 km). Total area of premises is 4.5 thousand m2, located on an industrial land plot of 1.5 hectares.',
+                    legal_title: 'Legal Information',
+                    details: [
+                        { label: 'Full Name', value: 'PUBLIC JOINT STOCK COMPANY “ETALON”' },
+                        { label: 'EDRPOU Code', value: '14214408' },
+                        { label: 'VAT Payer', value: '# 142144023058' },
+                        { label: 'Director', value: 'Mitasov Maksym Viktorovych' },
+                        { label: 'Address', value: '20300, Ukraine, Cherkasy region, Uman, Starytskoho str., 5' },
+                        { label: 'Foundation Date', value: '24.12.1992' },
+                        { label: 'Authorized Capital', value: '501 160 UAH' },
+                        { label: 'NACE (KVED)', value: '22.29 Manufacture of other plastic products' }
+                    ]
+                },
+                advantages: {
+                    title: "Our Advantages",
+                    items: [
+                        { title: "High Quality", text: "Products are certified, meet ISO standards, and are made from medical-grade raw materials." },
+                        { title: "Manufacturer Price", text: "We are a direct manufacturer, guaranteeing the best prices on the market without intermediaries." },
+                        { title: "Wide Range", text: "Large selection of containers from 7 ml to 250 ml for any pharmaceutical needs." },
+                        { title: "Individual Approach", text: "Ability to manufacture products in any color according to customer's request." }
+                    ]
+                },
+                catalog: {
+                    title: 'Product Catalog',
+                    subtitle: 'Minimum order from 10,000 units',
+                    pricePrefix: 'Volume:',
+                    currency: '',
+                    details: 'Details'
+                },
+                delivery: {
+                    title: "Delivery and Payment",
+                    intro: "We provide reliable and prompt delivery of our products throughout Ukraine and all European countries.",
+                    del_title: "Delivery",
+                    del_items: [
+                        "<strong>Within Ukraine</strong>: carried out via trusted carriers ('Nova Poshta', 'Ukrposhta', delivery to warehouse or by courier to your address). Delivery terms — 1–3 business days depending on the region.",
+                        "<strong>Across Europe</strong>: we ship to all EU countries (Poland, Germany, Czech Republic, Lithuania, Romania, Hungary, etc.) through international logistics partners (DHL, FedEx, UPS or by road transport). Delivery terms — from 3 to 10 business days depending on the country and chosen method.",
+                        "Delivery cost is calculated individually based on order volume, weight, and destination. For large wholesale batches, free delivery or significant logistics discounts are possible."
+                    ],
+                    pay_title: "Payment",
+                    pay_items: [
+                        "We accept payments in several currencies for your convenience: <strong>Ukrainian Hryvnia (UAH)</strong>, <strong>US Dollar (USD)</strong>, <strong>Euro (EUR)</strong>, <strong>Polish Zloty (PLN)</strong>, <strong>Czech Koruna (CZK)</strong>.",
+                        "All payments include VAT (we are VAT payers, certificate No. 142144023058).",
+                        {
+                            text: "Possible payment methods:",
+                            subitems: [
+                                "Non-cash bank transfer (for legal entities — with a full set of accounting documents).",
+                                "Payment to the current account according to the issued invoice.",
+                                "For foreign partners — SWIFT transfer."
+                            ]
+                        }
+                    ],
+                    footer: "Minimum order — from 10,000 units. For regular customers and large volumes, flexible payment terms are available (deferred payment, partial prepayment).<br><br>If you have special requests regarding delivery or payment — contact our sales department, and we will select the best option for you."
+                },
+                contact: {
+                    title: 'Contact Us',
+                    form_name: 'Your Name',
+                    form_phone: 'Phone',
+                    form_msg: 'Message',
+                    btn_send: 'Send Request',
+                    btn_sending: 'Sending...',
+                    success_title: 'Thank You!',
+                    success_msg: 'Your request has been sent successfully. A manager will contact you shortly.',
+                    sales_dep: 'Sales Department',
+                    phones: ['+38 (096) 244-18-14', '+38 (063) 307-44-71'],
+                    address_val: 'Ukraine, Cherkasy region, Uman, Starytskoho str., 5',
+                    address_lbl: 'Production Address:'
+                }
+            },
+            PL: {
+                nav: { home: 'Strona główna', about: 'O nas', catalog: 'Katalog', certs: 'Dokumenty', delivery: 'Dostawa', contacts: 'Kontakt' },
+                btn_contact: "Skontaktuj się",
+                partners_title: 'Nasi Partnerzy',
+                certs_title: 'Dokumenty / Warunki Techniczne / Certyfikaty',
+                filter: { all: 'Wszystkie', small: 'Małe (<50 ml)', medium: 'Średnie (50-150 ml)', large: 'Duże (>150 ml)' },
+                hero: {
+                    title: 'Polimerowe pojemniki medyczne od producenta',
+                    subtitle: 'Niezawodne opakowania dla farmacji od 2006 roku',
+                    cta: 'Zobacz katalog'
+                },
+                about: {
+                    title: 'O firmie ETALON POLYMERS',
+                    text1: 'Przedsiębiorstwo ETALON POLYMERS posiada własną linię do produkcji opakowań medycznych. Produkty przeznaczone są do pakowania sypkich preparatów medycznych oraz maści. Produkowane zgodnie z TU U 22.2-14214408-001:2012.',
+                    text2: 'Zakład PJSC "ETALON" to przedsiębiorstwo prywatne w formie publicznej spółki akcyjnej z kapitałem zakładowym 501,2 tys. UAH. Zakład znajduje się w strefie przemysłowej miasta Humań.',
+                    text3: 'Łączna powierzchnia pomieszczeń wynosi 4,5 tys. m2, położona na działce przemysłowej o powierzchni 1,5 ha.',
+                    legal_title: 'Informacje prawne',
+                    details: [
+                        { label: 'Pełna nazwa', value: 'PUBLIC JOINT STOCK COMPANY “ETALON”' },
+                        { label: 'Kod EDRPOU', value: '14214408' },
+                        { label: 'Dyrektor', value: 'Mitasov Maksym Viktorovych' },
+                        { label: 'Adres', value: '20300, Ukraina, obwód czerkaski, Humań, ul. Starytskoho 5' },
+                        { label: 'Data założenia', value: '24.12.1992' },
+                        { label: 'Kapitał zakładowy', value: '501 160 UAH' },
+                        { label: 'KVED', value: '22.29 Produkcja pozostałych wyrobów z tworzyw sztucznych' }
+                    ]
+                },
+                advantages: {
+                    title: "Nasze Zalety",
+                    items: [
+                        { title: "Wysoka Jakość", text: "Produkty są certyfikowane, spełniają normy ISO i są wykonane z surowców medycznych." },
+                        { title: "Cena Producenta", text: "Jesteśmy bezpośrednim producentem, co gwarantuje najlepsze ceny na rynku bez pośredników." },
+                        { title: "Szeroki Asortyment", text: "Duży wybór pojemników od 7 ml do 250 ml dla wszelkich potrzeb farmaceutycznych." },
+                        { title: "Indywidualne Podejście", text: "Możliwość produkcji w dowolnym kolorze na życzenie klienta." }
+                    ]
+                },
+                catalog: {
+                    title: 'Katalog produktów',
+                    subtitle: 'Minimalne zamówienie od 10 000 sztuk',
+                    pricePrefix: 'Objętość:',
+                    currency: '',
+                    details: 'Szczegóły'
+                },
+                delivery: {
+                    title: "Dostawa i Płatność",
+                    intro: "Zapewniamy niezawodną i szybką dostawę naszych produktów na terenie całej Ukrainy oraz krajów Europy.",
+                    del_title: "Dostawa",
+                    del_items: [
+                        "<strong>Na Ukrainie</strong>: realizowana za pośrednictwem sprawdzonych przewoźników («Nowa Poszta», «Ukrposzta», dostawa do magazynu lub kurierem pod wskazany adres). Terminy dostawy — 1–3 dni robocze w zależności od regionu.",
+                        "<strong>Do Europy</strong>: wysyłamy do wszystkich krajów UE (Polska, Niemcy, Czechy, Litwa, Rumunia, Węgry itp.) za pośrednictwem międzynarodowych partnerów logistycznych (DHL, FedEx, UPS lub transportem drogowym). Terminy dostawy — od 3 do 10 dni roboczych w zależności od kraju i wybranej metody.",
+                        "Koszt dostawy jest kalkulowany indywidualnie w zależności od objętości zamówienia, wagi oraz miejsca przeznaczenia. Dla dużych partii hurtowych możliwa darmowa dostawa lub znaczące zniżki na logistykę."
+                    ],
+                    pay_title: "Płatność",
+                    pay_items: [
+                        "Akceptujemy płatności w kilku walutach dla Państwa wygody: <strong>hrywna ukraińska (UAH)</strong>, <strong>dolar amerykański (USD)</strong>, <strong>euro (EUR)</strong>, <strong>złoty polski (PLN)</strong>, <strong>korona czeska (CZK)</strong>.",
+                        "Wszystkie płatności z uwzględnieniem VAT (jesteśmy płatnikami VAT, świadectwo nr 142144023058).",
+                        {
+                            text: "Możliwe formy płatności:",
+                            subitems: [
+                                "Przelew bankowy bezgotówkowy (dla osób prawnych — z pełnym pakietem dokumentów księgowych).",
+                                "Płatność na rachunek bieżący według wystawionej faktury.",
+                                "Dla zagranicznych partnerów — przelew SWIFT."
+                            ]
+                        }
+                    ],
+                    footer: "Minimalne zamówienie — od 10 000 sztuk. Dla stałych klientów oraz dużych wolumenów obowiązują elastyczne warunki płatności (odroczona płatność, częściowa przedpłata).<br><br>Jeśli mają Państwo specjalne życzenia dotyczące dostawy lub płatności — prosimy o kontakt z naszym działem sprzedaży, dobierzemy optymalne rozwiązanie właśnie dla Państwa."
+                },
+                contact: {
+                    title: 'Skontaktuj się z nami',
+                    form_name: 'Twoje imię',
+                    form_phone: 'Telefon',
+                    form_msg: 'Wiadomość',
+                    btn_send: 'Wyślij zapytanie',
+                    btn_sending: 'Wysyłanie...',
+                    success_title: 'Dziękujemy!',
+                    success_msg: 'Twoje zapytanie zostało pomyślnie wysłane. Menedżer skontaktuje się z Tobą wkrótce.',
+                    sales_dep: 'Dział sprzedaży',
+                    phones: ['+38 (096) 244-18-14', '+38 (063) 307-44-71'],
+                    address_val: 'Ukraina, obwód czerkaski, Humań, ul. Starytskoho 5',
+                    address_lbl: 'Adres produkcji:'
+                }
+            },
+            DE: {
+                nav: { home: 'Startseite', about: 'Über uns', catalog: 'Katalog', certs: 'Dokumente', delivery: 'Lieferung', contacts: 'Kontakte' },
+                btn_contact: "Kontaktiere uns",
+                partners_title: 'Unsere Partner',
+                certs_title: 'Dokumente / Technische Bedingungen / Zertifikate',
+                filter: { all: 'Alle', small: 'Klein (<50 ml)', medium: 'Mittel (50-150 ml)', large: 'Groß (>150 ml)' },
+                hero: {
+                    title: 'Medizinische Polymerbehälter vom Hersteller',
+                    subtitle: 'Zuverlässige pharmazeutische Verpackungen seit 2006',
+                    cta: 'Katalog ansehen'
+                },
+                about: {
+                    title: 'Über ETALON POLYMERS',
+                    text1: 'Das Unternehmen ETALON POLYMERS verfügt über eine eigene Produktionslinie für medizinische Verpackungen. Hergestellt gemäß TU U 22.2-14214408-001:2012.',
+                    text2: 'Das Werk PJSC "ETALON" ist ein Privatunternehmen in Form einer öffentlichen Aktiengesellschaft mit einem Stammkapital von 501,2 Tsd. UAH. Das Werk befindet sich im Industriegebiet der Stadt Uman.',
+                    text3: 'Die Gesamtfläche der Räumlichkeiten beträgt 4,5 Tsd. m2 auf einem Industriegrundstück von 1,5 Hektar.',
+                    legal_title: 'Rechtliche Informationen',
+                    details: [
+                        { label: 'Vollständiger Name', value: 'PUBLIC JOINT STOCK COMPANY “ETALON”' },
+                        { label: 'EDRPOU Code', value: '14214408' },
+                        { label: 'Direktor', value: 'Mitasov Maksym Viktorovych' },
+                        { label: 'Adresse', value: '20300, Ukraine, Gebiet Tscherkassy, Uman, Starytskoho Str. 5' },
+                        { label: 'Gründungsdatum', value: '24.12.1992' },
+                        { label: 'Stammkapital', value: '501 160 UAH' },
+                        { label: 'KVED', value: '22.29 Herstellung von sonstigen Kunststoffwaren' }
+                    ]
+                },
+                advantages: {
+                    title: "Unsere Vorteile",
+                    items: [
+                        { title: "Hohe Qualität", text: "Die Produkte sind zertifiziert, entsprechen ISO-Normen und werden aus medizinischen Rohstoffen hergestellt." },
+                        { title: "Herstellerpreis", text: "Wir sind ein direkter Hersteller, was die besten Preise auf dem Markt ohne Zwischenhändler garantiert." },
+                        { title: "Breites Sortiment", text: "Große Auswahl an Behältern von 7 ml bis 250 ml für alle pharmazeutischen Bedürfnisse." },
+                        { title: "Individueller Ansatz", text: "Möglichkeit zur Herstellung von Produkten in beliebiger Farbe auf Kundenwunsch." }
+                    ]
+                },
+                catalog: {
+                    title: 'Produktkatalog',
+                    subtitle: 'Mindestbestellmenge ab 10.000 Stück',
+                    pricePrefix: 'Volumen:',
+                    currency: '',
+                    details: 'Einzelheiten'
+                },
+                delivery: {
+                    title: "Lieferung und Zahlung",
+                    intro: "Wir gewährleisten eine zuverlässige und schnelle Lieferung unserer Produkte in der gesamten Ukraine und in allen europäischen Ländern.",
+                    del_title: "Lieferung",
+                    del_items: [
+                        "<strong>Innerhalb der Ukraine</strong>: erfolgt über bewährte Spediteure („Nova Poshta“, „Ukrposhta“, Lieferung ans Lager oder per Kurier an Ihre Adresse). Lieferfristen — 1–3 Werktage je nach Region.",
+                        "<strong>Nach Europa</strong>: Versand in alle EU-Länder (Polen, Deutschland, Tschechien, Litauen, Rumänien, Ungarn usw.) über internationale Logistikpartner (DHL, FedEx, UPS oder per Lkw-Transport). Lieferfristen — 3 bis 10 Werktage je nach Land und gewählter Methode.",
+                        "Die Versandkosten werden individuell berechnet, abhängig vom Bestellvolumen, Gewicht und Zielort. Bei großen Großhandelsmengen ist kostenloser Versand oder erhebliche Logistikrabatte möglich."
+                    ],
+                    pay_title: "Zahlung",
+                    pay_items: [
+                        "Wir akzeptieren Zahlungen in mehreren Währungen zu Ihrer Bequemlichkeit: <strong>Ukrainische Griwna (UAH)</strong>, <strong>US-Dollar (USD)</strong>, <strong>Euro (EUR)</strong>, <strong>Polnischer Zloty (PLN)</strong>, <strong>Tschechische Krone (CZK)</strong>.",
+                        "Alle Zahlungen inklusive MwSt. (wir sind MwSt.-Zahler, Nachweis Nr. 142144023058).",
+                        {
+                            text: "Mögliche Zahlungsarten:",
+                            subitems: [
+                                "Bargeldloser Banküberweisung (für juristische Personen — mit vollständigem Satz Buchhaltungsunterlagen).",
+                                "Zahlung auf das Girokonto gemäß ausgestellter Rechnung.",
+                                "Für ausländische Partner — SWIFT-Überweisung."
+                            ]
+                        }
+                    ],
+                    footer: "Mindestbestellmenge — ab 10.000 Einheiten. Für Stammkunden und große Volumen gelten flexible Zahlungsbedingungen (Zahlungsaufschub, Teilvorauszahlung).<br><br>Falls Sie besondere Wünsche zur Lieferung oder Zahlung haben — kontaktieren Sie unsere Verkaufsabteilung, wir finden die optimale Lösung für Sie."
+                },
+                contact: {
+                    title: 'Kontaktieren Sie uns',
+                    form_name: 'Ihr Name',
+                    form_phone: 'Telefon',
+                    form_msg: 'Nachricht',
+                    btn_send: 'Anfrage senden',
+                    btn_sending: 'Senden...',
+                    success_title: 'Vielen Dank!',
+                    success_msg: 'Ihre Anfrage wurde erfolgreich gesendet. Ein Manager wird sich in Kürze bei Ihnen melden.',
+                    sales_dep: 'Vertriebsabteilung',
+                    phones: ['+38 (096) 244-18-14', '+38 (063) 307-44-71'],
+                    address_val: 'Ukraine, Gebiet Tscherkassy, Uman, Starytskoho Str. 5',
+                    address_lbl: 'Produktionsadresse:'
+                }
+            }
+        };
+
+        // --- STATE ---
+        let currentLang = 'UA';
+        let activeTab = 'home';
+        let isMenuOpen = false;
+        let activeFilter = 'all';
+
+        // --- INIT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderContent();
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        // --- FUNCTIONS ---
+
+        function setLang(lang) {
+            currentLang = lang;
+            renderContent();
+        }
+        
+        function setFilter(filterType) {
+            activeFilter = filterType;
+            renderCatalog();
+        }
+
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (isMenuOpen) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        function scrollToSection(id) {
+            activeTab = id;
+            isMenuOpen = false;
+            document.getElementById('mobile-menu').classList.add('hidden');
+            const icon = document.getElementById('menu-icon');
+            if(icon) {
+                 icon.setAttribute('data-lucide', 'menu');
+                 lucide.createIcons();
+            }
+            
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            renderNav(); // Re-render nav to update active state
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleScroll() {
+            const header = document.getElementById('main-header');
+            const scrollBtn = document.getElementById('scroll-top-btn');
+            
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-0');
+                header.classList.remove('bg-white', 'shadow-sm', 'py-2');
+            } else {
+                header.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-0');
+                header.classList.add('bg-white', 'shadow-sm', 'py-2');
+            }
+
+            if (window.scrollY > 500) {
+                scrollBtn.classList.remove('translate-y-20', 'opacity-0');
+                scrollBtn.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                scrollBtn.classList.add('translate-y-20', 'opacity-0');
+                scrollBtn.classList.remove('translate-y-0', 'opacity-100');
+            }
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('modal-img-element');
+            img.src = imageSrc;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+        }
+
+        // --- RENDERING ---
+
+        function renderContent() {
+            const t = translations[currentLang];
+
+            // Render Nav
+            renderNav();
+
+            // Language Switcher
+            const langContainer = document.getElementById('lang-switcher');
+            langContainer.innerHTML = ['UA', 'EN', 'PL', 'DE'].map(l => `
+                <button
+                    onclick="setLang('${l}')"
+                    class="px-2 py-1 text-xs font-bold rounded-md transition-all ${
+                        currentLang === l ? 'bg-white text-green-700 shadow-sm' : 'text-slate-400 hover:text-slate-600'
+                    }"
+                >
+                    ${l}
+                </button>
+            `).join('');
+            
+            const footerLangLinks = document.getElementById('footer-lang-links');
+            footerLangLinks.innerHTML = ['UA', 'EN', 'PL', 'DE'].map(l => `
+                <span onclick="setLang('${l}')" class="text-xs font-bold cursor-pointer hover:text-white transition-colors">${l}</span>
+             `).join('');
+             
+            // Header Contact Btn
+            document.getElementById('header-contact-btn-text').innerText = t.btn_contact;
+            document.getElementById('mobile-contact-btn-text').innerText = t.btn_contact;
+
+            // Hero
+            document.getElementById('hero-title').innerText = t.hero.title;
+            document.getElementById('hero-subtitle').innerText = t.hero.subtitle;
+            document.getElementById('hero-cta').innerText = t.hero.cta;
+
+            // About
+            document.getElementById('about-title').innerText = t.about.title;
+            document.getElementById('about-text1').innerText = t.about.text1;
+            document.getElementById('about-text2').innerText = t.about.text2;
+            document.getElementById('about-text3').innerText = t.about.text3;
+            document.getElementById('about-legal-title').innerText = t.about.legal_title;
+            
+            // About Details
+            const aboutGrid = document.getElementById('about-details-grid');
+            aboutGrid.innerHTML = t.about.details.map(item => `
+                <div class="flex flex-col sm:flex-row sm:justify-between border-b border-slate-100 last:border-0 pb-2 last:pb-0">
+                    <span class="text-sm font-medium text-slate-500">${item.label}</span>
+                    <span class="text-sm font-semibold text-slate-800 text-right sm:max-w-[70%]">${item.value}</span>
+                </div>
+            `).join('');
+
+            // Advantages
+            document.getElementById('adv-title').innerText = t.advantages.title;
+            document.getElementById('adv-grid').innerHTML = t.advantages.items.map((item, idx) => `
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 text-center hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="${advIcons[idx]}" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">${item.title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">${item.text}</p>
+                </div>
+            `).join('');
+
+            // Catalog
+            document.getElementById('catalog-title').innerText = t.catalog.title;
+            document.getElementById('catalog-subtitle').innerText = t.catalog.subtitle;
+            renderCatalog();
+
+            // Documents / Certificates
+            document.getElementById('certs-title').innerText = t.certs_title;
+            const certsGrid = document.getElementById('certificates-grid');
+            certsGrid.innerHTML = documents.map(doc => `
+                <div 
+                    class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col items-center text-center gap-4 hover:bg-slate-750 transition-colors group cursor-pointer"
+                    onclick="openModal('${doc.file}')"
+                >
+                    <div class="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="${doc.icon}" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2 leading-tight">${doc.title}</h4>
+                        <div class="inline-flex items-center gap-1 text-xs text-green-400 font-bold uppercase tracking-wider mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i data-lucide="eye" class="w-3 h-3"></i> Переглянути
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Partners
+            document.getElementById('partners-title').innerText = t.partners_title;
+
+            // Delivery
+            document.getElementById('delivery-title').innerText = t.delivery.title;
+            document.getElementById('delivery-intro').innerText = t.delivery.intro;
+            
+            document.getElementById('del-title').innerText = t.delivery.del_title;
+            document.getElementById('del-list').innerHTML = t.delivery.del_items.map(item => 
+                `<div class="flex gap-2">
+                    <div class="min-w-[6px] h-[6px] rounded-full bg-green-500 mt-2"></div>
+                    <p>${item}</p>
+                </div>`
+            ).join('');
+
+            document.getElementById('pay-title').innerText = t.delivery.pay_title;
+            document.getElementById('pay-list').innerHTML = t.delivery.pay_items.map(item => {
+                if(typeof item === 'string') {
+                    return `<div class="flex gap-2">
+                        <div class="min-w-[6px] h-[6px] rounded-full bg-green-500 mt-2"></div>
+                        <p>${item}</p>
+                    </div>`;
+                } else {
+                    return `<div class="pl-2">
+                        <p class="font-semibold mb-2 text-slate-700">${item.text}</p>
+                        <ul class="space-y-2 pl-4 border-l-2 border-green-100">
+                            ${item.subitems.map(sub => `<li class="text-sm text-slate-500">${sub}</li>`).join('')}
+                        </ul>
+                    </div>`;
+                }
+            }).join('');
+            
+            document.getElementById('delivery-footer').innerHTML = t.delivery.footer;
+
+            // Contact
+            document.getElementById('contact-title').innerText = t.contact.title;
+            document.getElementById('contact-addr-lbl').innerText = t.contact.address_lbl;
+            document.getElementById('contact-addr-val').innerText = t.contact.address_val;
+            document.getElementById('contact-sales-lbl').innerText = t.contact.sales_dep;
+            document.getElementById('contact-phones').innerHTML = t.contact.phones.map(phone => 
+                `<p class="text-green-100 text-sm font-mono tracking-wide">${phone}</p>`
+            ).join('');
+
+            // Form Labels
+            document.getElementById('lbl-name').innerText = t.contact.form_name;
+            document.getElementById('lbl-phone').innerText = t.contact.form_phone;
+            document.getElementById('lbl-msg').innerText = t.contact.form_msg;
+            document.getElementById('btn-submit').innerText = t.contact.btn_send;
+            
+            // Success Message
+            document.getElementById('success-title').innerText = t.contact.success_title;
+            document.getElementById('success-msg').innerText = t.contact.success_msg;
+
+            // Re-init icons for new HTML
+            lucide.createIcons();
+        }
+        
+        function renderCatalog() {
+            const t = translations[currentLang];
+            
+            // Filters
+            const filtersContainer = document.getElementById('catalog-filters');
+            const filterTypes = [
+                { id: 'all', label: t.filter.all },
+                { id: 'small', label: t.filter.small },
+                { id: 'medium', label: t.filter.medium },
+                { id: 'large', label: t.filter.large }
+            ];
+            
+            filtersContainer.innerHTML = filterTypes.map(f => `
+                <button 
+                    onclick="setFilter('${f.id}')"
+                    class="px-4 py-2 rounded-full text-sm font-bold transition-all ${
+                        activeFilter === f.id 
+                        ? 'bg-green-600 text-white shadow-md' 
+                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                    }"
+                >
+                    ${f.label}
+                </button>
+            `).join('');
+            
+            // Products
+            const filteredProducts = products.filter(p => {
+                if (activeFilter === 'all') return true;
+                if (activeFilter === 'small') return p.ml < 50;
+                if (activeFilter === 'medium') return p.ml >= 50 && p.ml <= 150;
+                if (activeFilter === 'large') return p.ml > 150;
+                return true;
+            });
+            
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-green-300 transition-all duration-300 flex flex-col">
+                    <div 
+                        class="relative h-48 bg-slate-50 p-4 flex items-center justify-center cursor-zoom-in overflow-hidden"
+                        onclick="openModal('${product.image}')"
+                    >
+                        <img 
+                            src="${product.image}" 
+                            alt="${product.title}" 
+                            class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" 
+                        />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                             <div class="bg-white/80 p-2 rounded-full shadow-lg transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-slate-800 w-5 h-5"></i>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">${product.title}</h3>
+                        <p class="text-sm text-green-600 font-medium mb-3">${t.catalog.pricePrefix} ${product.volume}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function renderNav() {
+            const t = translations[currentLang];
+            const navItems = ['home', 'about', 'catalog', 'certificates', 'delivery', 'contact'];
+            
+            // Desktop
+            const desktopNav = document.getElementById('desktop-nav');
+            desktopNav.innerHTML = navItems.map(item => `
+                <button
+                    onclick="scrollToSection('${item}')"
+                    class="text-sm font-medium transition-colors hover:text-green-600 ${
+                        activeTab === item ? 'text-green-700 font-bold' : 'text-slate-600'
+                    }"
+                >
+                    ${t.nav[item === 'contact' ? 'contacts' : item === 'certificates' ? 'certs' : item === 'delivery' ? 'delivery' : item]}
+                </button>
+            `).join('');
+
+            // Mobile
+            const mobileNav = document.getElementById('mobile-nav-items');
+            mobileNav.innerHTML = navItems.map(item => `
+                <button
+                    onclick="scrollToSection('${item}')"
+                    class="text-left text-lg font-medium text-slate-700 py-2 border-b border-slate-50"
+                >
+                    ${t.nav[item === 'contact' ? 'contacts' : item === 'certificates' ? 'certs' : item === 'delivery' ? 'delivery' : item]}
+                </button>
+            `).join('');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btn-submit');
+            const originalText = btn.innerText;
+            const t = translations[currentLang];
+
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = `<i data-lucide="loader-2" class="animate-spin w-5 h-5"></i> ${t.contact.btn_sending}`;
+            lucide.createIcons();
+
+            // Simulation
+            setTimeout(() => {
+                document.getElementById('contact-form').classList.add('hidden');
+                document.getElementById('form-success').classList.remove('hidden');
+                document.getElementById('form-success').classList.add('flex');
+                
+                // Reset button
+                btn.disabled = false;
+                btn.innerText = originalText;
+            }, 1500);
+        }
+
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact-form').classList.remove('hidden');
+            document.getElementById('form-success').classList.add('hidden');
+            document.getElementById('form-success').classList.remove('flex');
+        }
+
+    </script>
+</body>
+</html>
